@@ -4,11 +4,20 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import Landing from "./pages/Landing";
+import UserProfile from "./pages/UserProfile";
+import Guides from "./pages/Guides";
+import Dashboard from "./pages/Dashboard";
 
 function Router() {
   return (
     <Switch>
-      <Route path={"/*"} component={Home} />
+      <Route path="/" component={Landing} />
+      <Route path="/games" component={Home} />
+      <Route path="/profile" component={UserProfile} />
+      <Route path="/guides" component={Guides} />
+      <Route path="/dashboard" component={Dashboard} />
+      <Route path="/*" component={Landing} />
     </Switch>
   );
 }
